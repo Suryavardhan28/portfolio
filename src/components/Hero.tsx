@@ -1,4 +1,4 @@
-import { GitHub, LinkedIn } from "@mui/icons-material";
+import { Download, GitHub, LinkedIn } from "@mui/icons-material";
 import {
     Box,
     Button,
@@ -240,6 +240,28 @@ const Hero = () => {
                                     }}
                                 >
                                     LinkedIn
+                                </Button>
+                                <Button
+                                    variant="outlined"
+                                    color="primary"
+                                    size="large"
+                                    startIcon={<Download />}
+                                    href="/portfolio/resume.pdf"
+                                    download
+                                    sx={{
+                                        borderRadius: "24px",
+                                        px: 4,
+                                        py: 1.5,
+                                        "&:hover": {
+                                            backgroundColor: "transparent",
+                                            borderColor: "primary.main",
+                                            opacity: 0.9,
+                                            color:
+                                                mode === "dark" ? "white" : "",
+                                        },
+                                    }}
+                                >
+                                    Resume
                                 </Button>
                             </Stack>
                         </motion.div>
