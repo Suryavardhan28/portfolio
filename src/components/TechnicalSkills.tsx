@@ -134,7 +134,7 @@ const TechnicalSkills = () => {
                     </Typography>
 
                     <Grid container spacing={4}>
-                        {skills.map((skillGroup, index) => (
+                        {skills.map((skillGroup) => (
                             <Grid item xs={12} md={6} key={skillGroup.category}>
                                 <motion.div variants={itemVariants}>
                                     <Paper
