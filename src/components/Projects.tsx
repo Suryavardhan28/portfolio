@@ -1,5 +1,4 @@
 import GitHubIcon from "@mui/icons-material/GitHub";
-import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import {
     Box,
     Button,
@@ -39,16 +38,45 @@ const projects: Project[] = [
     {
         title: "LRU Cache Management System",
         description:
-            "Built and implemented web-based Least Recently Used (LRU) cache with auto-eviction, live updates, and concurrency handling.",
+            "Developed a real-time LRU cache system with WebSocket integration for live updates, automatic eviction of expired items, and thread-safe concurrent operations. Features include key-value storage with expiration, clipboard integration, and a responsive React TypeScript frontend.",
         technologies: ["TypeScript", "Golang", "WebSocket", "REST APIs"],
-        githubLink: "https://github.com/yourusername/lru-cache",
+        githubLink: "https://github.com/Suryavardhan28/LRU-Cache",
     },
     {
         title: "School Vaccination Portal",
         description:
-            "Built and deployed full-stack web application for managing school vaccination drives with role-based authentication and real-time dashboard using Agile methodology.",
+            "Built a comprehensive vaccination management system with role-based access control, real-time analytics dashboard, and automated report generation. Features include student record management, vaccination drive scheduling, and multi-format data export capabilities.",
         technologies: ["React", "TypeScript", "Node.js", "Material-UI", "JWT"],
-        githubLink: "https://github.com/yourusername/vaccination-portal",
+        githubLink:
+            "https://github.com/Suryavardhan28/school-vaccination-portal",
+    },
+    {
+        title: "Jenkins CI/CD Pipeline",
+        description:
+            "Implemented a comprehensive CI/CD pipeline using Jenkins with automated testing, security scanning, and staged deployments. Features include master-slave configuration, role-based access control, and automated rollback procedures. Supports both staging and production environments with Docker containerization.",
+        technologies: [
+            "Jenkins",
+            "Docker",
+            "Node.js",
+            "Express",
+            "CI/CD",
+            "Shell Scripting",
+        ],
+        githubLink:
+            "https://github.com/Suryavardhan28/jenkins-pipeline-project",
+    },
+    {
+        title: "Modern Portfolio Website",
+        description:
+            "Designed and developed a modern, responsive portfolio website with smooth animations, dynamic theme switching, and glass morphism effects. Features include interactive project cards, animated section transitions, and a fully responsive layout that adapts seamlessly across all devices.",
+        technologies: [
+            "React",
+            "TypeScript",
+            "Material-UI",
+            "Framer Motion",
+            "Bun",
+        ],
+        githubLink: "https://github.com/Suryavardhan28/portfolio",
     },
 ];
 
@@ -132,7 +160,7 @@ const Projects = () => {
                     </Typography>
 
                     <Grid container spacing={4}>
-                        {projects.map((project, index) => (
+                        {projects.map((project) => (
                             <Grid
                                 item
                                 xs={12}
@@ -145,6 +173,7 @@ const Projects = () => {
                                         elevation={0}
                                         sx={{
                                             p: 3,
+                                            minHeight: "380px",
                                             height: "100%",
                                             bgcolor: "background.paper",
                                             borderRadius: 4,
@@ -152,6 +181,7 @@ const Projects = () => {
                                             borderColor: "divider",
                                             display: "flex",
                                             flexDirection: "column",
+                                            justifyContent: "space-between",
                                             transition:
                                                 "transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out",
                                             "&:hover": {
@@ -161,29 +191,44 @@ const Projects = () => {
                                             },
                                         }}
                                     >
-                                        <Typography
-                                            variant="h5"
-                                            color="primary.main"
-                                            sx={{ mb: 2, fontWeight: 600 }}
-                                        >
-                                            {project.title}
-                                        </Typography>
+                                        {/* Title Section */}
+                                        <Box sx={{ mb: 3 }}>
+                                            <Typography
+                                                variant="h5"
+                                                color="primary.main"
+                                                sx={{
+                                                    fontWeight: 600,
+                                                    minHeight: "32px",
+                                                    display: "flex",
+                                                    alignItems: "center",
+                                                }}
+                                            >
+                                                {project.title}
+                                            </Typography>
+                                        </Box>
 
-                                        <Typography
-                                            variant="body1"
-                                            color="text.primary"
-                                            sx={{ mb: 3, flex: 1 }}
-                                        >
-                                            {project.description}
-                                        </Typography>
+                                        {/* Description Section */}
+                                        <Box sx={{ mb: 3 }}>
+                                            <Typography
+                                                variant="body1"
+                                                color="text.primary"
+                                                sx={{
+                                                    minHeight: "96px",
+                                                    lineHeight: 1.5,
+                                                }}
+                                            >
+                                                {project.description}
+                                            </Typography>
+                                        </Box>
 
-                                        <Stack spacing={2}>
+                                        {/* Technologies Section */}
+                                        <Box sx={{ mb: "auto" }}>
                                             <Box
                                                 sx={{
                                                     display: "flex",
                                                     flexWrap: "wrap",
-                                                    gap: 1,
-                                                    mb: 2,
+                                                    gap: 0.5,
+                                                    minHeight: "32px",
                                                 }}
                                             >
                                                 {project.technologies.map(
@@ -198,46 +243,42 @@ const Projects = () => {
                                                                 color: "text.primary",
                                                                 borderRadius:
                                                                     "16px",
+                                                                border: "1px solid",
+                                                                borderColor:
+                                                                    "divider",
+                                                                m: 0.5,
                                                             }}
                                                         />
                                                     )
                                                 )}
                                             </Box>
+                                        </Box>
 
-                                            <Stack direction="row" spacing={2}>
-                                                <Button
-                                                    variant="contained"
-                                                    color="primary"
-                                                    startIcon={<GitHubIcon />}
-                                                    href={project.githubLink}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    fullWidth
-                                                    sx={{
-                                                        borderRadius: "8px",
-                                                    }}
-                                                >
-                                                    GitHub
-                                                </Button>
-                                                {project.demoLink && (
-                                                    <Button
-                                                        variant="outlined"
-                                                        color="primary"
-                                                        startIcon={
-                                                            <OpenInNewIcon />
-                                                        }
-                                                        href={project.demoLink}
-                                                        target="_blank"
-                                                        rel="noopener noreferrer"
-                                                        fullWidth
-                                                        sx={{
-                                                            borderRadius: "8px",
-                                                        }}
-                                                    >
-                                                        Live Demo
-                                                    </Button>
-                                                )}
-                                            </Stack>
+                                        <Stack
+                                            direction="row"
+                                            spacing={2}
+                                            sx={{ mt: 2 }}
+                                        >
+                                            <Button
+                                                variant="contained"
+                                                color="primary"
+                                                startIcon={<GitHubIcon />}
+                                                href={project.githubLink}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                fullWidth
+                                                sx={{
+                                                    borderRadius: "8px",
+                                                    "&:hover": {
+                                                        backgroundColor:
+                                                            "inherit",
+                                                        opacity: 0.9,
+                                                        color: "white",
+                                                    },
+                                                }}
+                                            >
+                                                GitHub
+                                            </Button>
                                         </Stack>
                                     </Paper>
                                 </motion.div>

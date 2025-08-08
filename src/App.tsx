@@ -1,6 +1,7 @@
-import { Box, Container } from "@mui/material";
+import { Box } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
-import { ThemeProvider } from "@mui/material/styles";
+import { ThemeProvider as MuiThemeProvider } from "@mui/material/styles";
+import { useMemo } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import Certifications from "./components/Certifications";
 import Education from "./components/Education";
@@ -11,12 +12,17 @@ import ProfessionalSummary from "./components/ProfessionalSummary";
 import Projects from "./components/Projects";
 import ScrollToTop from "./components/ScrollToTop";
 import TechnicalSkills from "./components/TechnicalSkills";
+import ThemeToggle from "./components/ThemeToggle";
 import WorkExperience from "./components/WorkExperience";
-import { theme } from "./theme/theme";
+import { getTheme } from "./theme/theme";
+import { useThemeContext } from "./theme/useThemeContext";
 
 function App() {
+    const { mode } = useThemeContext();
+    const theme = useMemo(() => getTheme(mode), [mode]);
+
     return (
-        <ThemeProvider theme={theme}>
+        <MuiThemeProvider theme={theme}>
             <CssBaseline />
             <Router>
                 <Box
@@ -47,9 +53,10 @@ function App() {
                     </Box>
                     <Footer />
                     <ScrollToTop />
+                    <ThemeToggle />
                 </Box>
             </Router>
-        </ThemeProvider>
+        </MuiThemeProvider>
     );
 }
 

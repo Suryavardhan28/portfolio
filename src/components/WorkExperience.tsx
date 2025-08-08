@@ -12,6 +12,7 @@ import { useInView } from "react-intersection-observer";
 interface Experience {
     title: string;
     company: string;
+    websiteLink: string;
     location: string;
     period: string;
     achievements: string[];
@@ -21,6 +22,7 @@ const experiences: Experience[] = [
     {
         title: "Software Engineer",
         company: "Betsol",
+        websiteLink: "https://betsol.com",
         location: "Bengaluru, Karnataka",
         period: "March 2024 - Present",
         achievements: [
@@ -35,6 +37,7 @@ const experiences: Experience[] = [
     {
         title: "Associate Software Engineer",
         company: "Betsol",
+        websiteLink: "https://betsol.com",
         location: "Bengaluru, Karnataka",
         period: "January 2022 - March 2024",
         achievements: [
@@ -46,6 +49,7 @@ const experiences: Experience[] = [
     {
         title: "Software Engineer Intern",
         company: "Betsol",
+        websiteLink: "https://betsol.com",
         location: "Bengaluru, Karnataka",
         period: "January 2022 - April 2022",
         achievements: [
@@ -155,13 +159,6 @@ const WorkExperience = () => {
                             <motion.div
                                 key={experience.period}
                                 variants={itemVariants}
-                                sx={{
-                                    display: "flex",
-                                    flexDirection: isMobile ? "column" : "row",
-                                    justifyContent: "space-between",
-                                    mb: 6,
-                                    position: "relative",
-                                }}
                             >
                                 {/* Timeline dot */}
                                 {!isMobile && (
@@ -169,6 +166,7 @@ const WorkExperience = () => {
                                         sx={{
                                             position: "absolute",
                                             left: "50%",
+                                            ml: 0.1,
                                             transform: "translateX(-50%)",
                                             width: 16,
                                             height: 16,
@@ -202,6 +200,7 @@ const WorkExperience = () => {
                                         elevation={0}
                                         sx={{
                                             p: 3,
+                                            m: 0.5,
                                             bgcolor: "background.paper",
                                             borderRadius: 4,
                                             border: "1px solid",
@@ -212,6 +211,15 @@ const WorkExperience = () => {
                                                 transform: "translateY(-4px)",
                                                 boxShadow: theme.shadows[4],
                                             },
+                                        }}
+                                        onClick={() => {
+                                            window.open(
+                                                experience.websiteLink,
+                                                "_blank"
+                                            );
+                                        }}
+                                        style={{
+                                            cursor: "pointer",
                                         }}
                                     >
                                         <Typography

@@ -60,10 +60,9 @@ const achievements: Achievement[] = [
         description: "Betsol",
     },
     {
-        title: "Team Excellence Award",
-        date: "5x recipient",
-        description:
-            "Betsol (Nov 2022, Jan 2024, Aug 2024, Jan 2025, Jul 2025)",
+        title: "Team Excellence Award (5x recipient)",
+        date: "Nov 2022, Jan 2024, Aug 2024, Jan 2025 and Jul 2025",
+        description: "Betsol",
     },
 ];
 

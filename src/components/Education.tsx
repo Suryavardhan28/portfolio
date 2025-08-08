@@ -13,18 +13,32 @@ interface Education {
 
 const educationData: Education[] = [
     {
-        degree: "Master of Technology - Software Engineering",
-        institution: "BITS Pilani WILP",
+        degree: "Master of Technology - MTech, Computer Software Engineering",
+        institution: "Birla Institute of Technology and Science, Pilani",
         location: "Pilani, Rajasthan",
-        period: "July 2024 - July 2026",
+        period: "Jul 2024 - Jul 2026",
         grade: "CGPA: 9.28/10",
     },
     {
-        degree: "Bachelor of Engineering - Computer Science",
+        degree: "Bachelor of Engineering - BE, Computer Science Engineering",
         institution: "SJB Institute of Technology",
         location: "Bengaluru, Karnataka",
-        period: "August 2018 - July 2022",
+        period: "Aug 2018 - Aug 2022",
         grade: "CGPA: 9.1/10",
+    },
+    {
+        degree: "PUC, Biology, General",
+        institution: "MES PU College of Arts, Commerce and Science",
+        location: "Bengaluru, Karnataka",
+        period: "Apr 2016 - Apr 2018",
+        grade: "Grade: 93.33%",
+    },
+    {
+        degree: "High School Diploma, General Studies",
+        institution: "The New Cambridge High School",
+        location: "Bengaluru, Karnataka",
+        period: "Apr 2005 - Apr 2016",
+        grade: "Grade: 97.92%",
     },
 ];
 
@@ -108,7 +122,7 @@ const Education = () => {
                     </Typography>
 
                     <Grid container spacing={4} justifyContent="center">
-                        {educationData.map((education, index) => (
+                        {educationData.map((education) => (
                             <Grid item xs={12} md={6} key={education.degree}>
                                 <motion.div variants={itemVariants}>
                                     <Paper
