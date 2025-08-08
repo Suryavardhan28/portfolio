@@ -2,7 +2,7 @@
 
 A sleek, responsive portfolio website built with modern web technologies, featuring a beautiful glass-morphism design, smooth animations, and dark/light theme support. View the live site at [https://suryavardhan28.github.io/portfolio/](https://suryavardhan28.github.io/portfolio/)
 
-![Portfolio Preview](preview.png)
+![Portfolio Preview](public/preview.png)
 
 ## 🌟 Features
 
