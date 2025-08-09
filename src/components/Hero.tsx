@@ -283,55 +283,58 @@ const Hero = () => {
                 </motion.div>
 
                 {/* Scroll indicator */}
-                <motion.div
-                    variants={itemVariants}
-                    initial={{ y: 0, opacity: 0 }}
-                    animate={{
-                        y: [0, 8, 0],
-                        opacity: scrollTrigger ? 0 : 1,
-                        display: scrollTrigger ? "none" : "block",
-                    }}
-                    transition={{
-                        y: {
-                            duration: 2,
-                            repeat: Infinity,
-                            ease: "easeInOut",
-                        },
-                        opacity: {
-                            duration: 0.3,
-                        },
-                    }}
-                    style={{
+                <Box
+                    sx={{
                         position: "fixed",
                         bottom: "40px",
-                        left: "50%",
-                        transform: "translateX(-50%)",
+                        left: { xs: "auto", md: "50%" },
+                        right: { xs: "20px", md: "auto" },
+                        transform: { xs: "none", md: "translateX(-50%)" },
                         zIndex: 1200,
-                        transition: "opacity 0.3s ease-in-out",
                     }}
                 >
-                    <Box
-                        sx={{
-                            width: "30px",
-                            height: "50px",
-                            border: "2px solid",
-                            borderColor: "primary.main",
-                            borderRadius: "15px",
-                            position: "relative",
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "center",
+                    <motion.div
+                        variants={itemVariants}
+                        initial={{ y: 0, opacity: 0 }}
+                        animate={{
+                            y: [0, 8, 0],
+                            opacity: scrollTrigger ? 0 : 1,
+                            display: scrollTrigger ? "none" : "block",
+                        }}
+                        transition={{
+                            y: {
+                                duration: 2,
+                                repeat: Infinity,
+                                ease: "easeInOut",
+                            },
+                            opacity: {
+                                duration: 0.3,
+                            },
                         }}
                     >
-                        <KeyboardArrowDown
+                        <Box
                             sx={{
-                                color: "primary.main",
-                                fontSize: "24px",
-                                animation: "bounce 2s infinite",
+                                width: "30px",
+                                height: "50px",
+                                border: "2px solid",
+                                borderColor: "primary.main",
+                                borderRadius: "15px",
+                                position: "relative",
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
                             }}
-                        />
-                    </Box>
-                </motion.div>
+                        >
+                            <KeyboardArrowDown
+                                sx={{
+                                    color: "primary.main",
+                                    fontSize: "24px",
+                                    animation: "bounce 2s infinite",
+                                }}
+                            />
+                        </Box>
+                    </motion.div>
+                </Box>
             </Container>
         </Box>
     );
