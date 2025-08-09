@@ -52,24 +52,24 @@ const getDesignTokens = (mode: PaletteMode) => ({
     typography: {
         fontFamily: '"Inter", "Roboto", "Helvetica", "Arial", sans-serif',
         h1: {
-            fontSize: "2.5rem",
+            fontSize: "2rem",
             "@media (min-width:600px)": {
-                fontSize: "3rem",
+                fontSize: "2.5rem",
             },
             "@media (min-width:900px)": {
-                fontSize: "3.5rem",
+                fontSize: "3rem",
             },
             fontWeight: 700,
             letterSpacing: "-0.01562em",
             lineHeight: 1.2,
         },
         h2: {
-            fontSize: "2rem",
+            fontSize: "1.5rem",
             "@media (min-width:600px)": {
-                fontSize: "2.5rem",
+                fontSize: "2rem",
             },
             "@media (min-width:900px)": {
-                fontSize: "2.75rem",
+                fontSize: "2.5rem",
             },
             fontWeight: 600,
             letterSpacing: "-0.00833em",
@@ -116,6 +116,14 @@ const getDesignTokens = (mode: PaletteMode) => ({
     components: {
         MuiCssBaseline: {
             styleOverrides: {
+                "@keyframes bounce": {
+                    "0%, 100%": {
+                        transform: "translateY(0)",
+                    },
+                    "50%": {
+                        transform: "translateY(6px)",
+                    },
+                },
                 body: {
                     ...(mode === "light" && {
                         backgroundColor: "#f3f3f3", // gray

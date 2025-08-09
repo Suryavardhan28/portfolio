@@ -1,4 +1,9 @@
-import { Download, GitHub, LinkedIn } from "@mui/icons-material";
+import {
+    Download,
+    GitHub,
+    KeyboardArrowDown,
+    LinkedIn,
+} from "@mui/icons-material";
 import {
     Box,
     Button,
@@ -124,7 +129,7 @@ const Hero = () => {
                         <motion.div variants={itemVariants}>
                             <Box
                                 sx={{
-                                    height: "3.5rem",
+                                    height: { xs: "5rem", sm: "3.5rem" },
                                     position: "relative",
                                     mb: 2,
                                 }}
@@ -173,9 +178,14 @@ const Hero = () => {
 
                         <motion.div variants={itemVariants}>
                             <Stack
-                                direction="row"
+                                direction={{ xs: "column", sm: "row" }}
                                 spacing={2}
-                                sx={{ mt: 4, justifyContent: "center" }}
+                                sx={{
+                                    mt: 4,
+                                    justifyContent: "center",
+                                    width: { xs: "100%", sm: "auto" },
+                                    px: { xs: 2, sm: 0 },
+                                }}
                             >
                                 <Button
                                     variant="contained"
@@ -184,7 +194,8 @@ const Hero = () => {
                                     href="mailto:suryavardhan28@gmail.com"
                                     sx={{
                                         borderRadius: "24px",
-                                        px: 4,
+                                        width: { xs: "100%", sm: "auto" },
+                                        px: { xs: 2, sm: 4 },
                                         py: 1.5,
                                         "&:hover": {
                                             backgroundColor: "inherit",
@@ -205,7 +216,8 @@ const Hero = () => {
                                     rel="noopener noreferrer"
                                     sx={{
                                         borderRadius: "24px",
-                                        px: 4,
+                                        width: { xs: "100%", sm: "auto" },
+                                        px: { xs: 2, sm: 4 },
                                         py: 1.5,
                                         "&:hover": {
                                             backgroundColor: "transparent",
@@ -228,7 +240,8 @@ const Hero = () => {
                                     rel="noopener noreferrer"
                                     sx={{
                                         borderRadius: "24px",
-                                        px: 4,
+                                        width: { xs: "100%", sm: "auto" },
+                                        px: { xs: 2, sm: 4 },
                                         py: 1.5,
                                         "&:hover": {
                                             backgroundColor: "transparent",
@@ -250,7 +263,8 @@ const Hero = () => {
                                     download
                                     sx={{
                                         borderRadius: "24px",
-                                        px: 4,
+                                        width: { xs: "100%", sm: "auto" },
+                                        px: { xs: 2, sm: 4 },
                                         py: 1.5,
                                         "&:hover": {
                                             backgroundColor: "transparent",
@@ -304,19 +318,19 @@ const Hero = () => {
                             borderColor: "primary.main",
                             borderRadius: "15px",
                             position: "relative",
-                            "&::before": {
-                                content: '""',
-                                position: "absolute",
-                                width: "6px",
-                                height: "6px",
-                                backgroundColor: "primary.main",
-                                borderRadius: "50%",
-                                left: "50%",
-                                transform: "translateX(-50%)",
-                                top: "8px",
-                            },
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
                         }}
-                    />
+                    >
+                        <KeyboardArrowDown
+                            sx={{
+                                color: "primary.main",
+                                fontSize: "24px",
+                                animation: "bounce 2s infinite",
+                            }}
+                        />
+                    </Box>
                 </motion.div>
             </Container>
         </Box>

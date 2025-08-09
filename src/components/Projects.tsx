@@ -1,4 +1,6 @@
 import GitHubIcon from "@mui/icons-material/GitHub";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import {
     Box,
     Button,
@@ -9,7 +11,8 @@ import {
     Stack,
     Typography,
 } from "@mui/material";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
 import { useInView } from "react-intersection-observer";
 
 interface Project {
@@ -81,6 +84,7 @@ const projects: Project[] = [
 ];
 
 const Projects = () => {
+    const [isExpanded, setIsExpanded] = useState(false);
     const [ref, inView] = useInView({
         triggerOnce: false,
         threshold: 0.1,
@@ -160,131 +164,182 @@ const Projects = () => {
                     </Typography>
 
                     <Grid container spacing={4}>
-                        {projects.map((project) => (
-                            <Grid
-                                item
-                                xs={12}
-                                md={6}
-                                lg={4}
-                                key={project.title}
-                            >
-                                <motion.div variants={itemVariants}>
-                                    <Paper
-                                        elevation={0}
-                                        sx={{
-                                            p: 3,
-                                            minHeight: "380px",
-                                            height: "100%",
-                                            bgcolor: "background.paper",
-                                            borderRadius: 4,
-                                            border: "1px solid",
-                                            borderColor: "divider",
-                                            display: "flex",
-                                            flexDirection: "column",
-                                            justifyContent: "space-between",
-                                            transition:
-                                                "transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out",
-                                            "&:hover": {
-                                                transform: "translateY(-4px)",
-                                                boxShadow: (theme) =>
-                                                    theme.shadows[4],
-                                            },
-                                        }}
+                        <AnimatePresence mode="wait">
+                            {projects
+                                .slice(0, isExpanded ? projects.length : 3)
+                                .map((project) => (
+                                    <Grid
+                                        item
+                                        xs={12}
+                                        md={6}
+                                        lg={4}
+                                        key={project.title}
                                     >
-                                        {/* Title Section */}
-                                        <Box sx={{ mb: 3 }}>
-                                            <Typography
-                                                variant="h5"
-                                                color="primary.main"
+                                        <motion.div variants={itemVariants}>
+                                            <Paper
+                                                elevation={0}
                                                 sx={{
-                                                    fontWeight: 600,
-                                                    minHeight: "32px",
+                                                    p: 3,
+                                                    minHeight: "380px",
+                                                    height: "100%",
+                                                    bgcolor: "background.paper",
+                                                    borderRadius: 4,
+                                                    border: "1px solid",
+                                                    borderColor: "divider",
                                                     display: "flex",
-                                                    alignItems: "center",
-                                                }}
-                                            >
-                                                {project.title}
-                                            </Typography>
-                                        </Box>
-
-                                        {/* Description Section */}
-                                        <Box sx={{ mb: 3 }}>
-                                            <Typography
-                                                variant="body1"
-                                                color="text.primary"
-                                                sx={{
-                                                    minHeight: "96px",
-                                                    lineHeight: 1.5,
-                                                }}
-                                            >
-                                                {project.description}
-                                            </Typography>
-                                        </Box>
-
-                                        {/* Technologies Section */}
-                                        <Box sx={{ mb: "auto" }}>
-                                            <Box
-                                                sx={{
-                                                    display: "flex",
-                                                    flexWrap: "wrap",
-                                                    gap: 0.5,
-                                                    minHeight: "32px",
-                                                }}
-                                            >
-                                                {project.technologies.map(
-                                                    (tech) => (
-                                                        <Chip
-                                                            key={tech}
-                                                            label={tech}
-                                                            size="small"
-                                                            sx={{
-                                                                bgcolor:
-                                                                    "background.default",
-                                                                color: "text.primary",
-                                                                borderRadius:
-                                                                    "16px",
-                                                                border: "1px solid",
-                                                                borderColor:
-                                                                    "divider",
-                                                                m: 0.5,
-                                                            }}
-                                                        />
-                                                    )
-                                                )}
-                                            </Box>
-                                        </Box>
-
-                                        <Stack
-                                            direction="row"
-                                            spacing={2}
-                                            sx={{ mt: 2 }}
-                                        >
-                                            <Button
-                                                variant="contained"
-                                                color="primary"
-                                                startIcon={<GitHubIcon />}
-                                                href={project.githubLink}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                fullWidth
-                                                sx={{
-                                                    borderRadius: "8px",
+                                                    flexDirection: "column",
+                                                    justifyContent:
+                                                        "space-between",
+                                                    transition:
+                                                        "transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out",
                                                     "&:hover": {
-                                                        backgroundColor:
-                                                            "inherit",
-                                                        opacity: 0.9,
-                                                        color: "white",
+                                                        transform:
+                                                            "translateY(-4px)",
+                                                        boxShadow: (theme) =>
+                                                            theme.shadows[4],
                                                     },
                                                 }}
                                             >
-                                                GitHub
-                                            </Button>
-                                        </Stack>
-                                    </Paper>
-                                </motion.div>
-                            </Grid>
-                        ))}
+                                                {/* Title Section */}
+                                                <Box sx={{ mb: 3 }}>
+                                                    <Typography
+                                                        variant="h5"
+                                                        color="primary.main"
+                                                        sx={{
+                                                            fontWeight: 600,
+                                                            minHeight: "32px",
+                                                            display: "flex",
+                                                            alignItems:
+                                                                "center",
+                                                        }}
+                                                    >
+                                                        {project.title}
+                                                    </Typography>
+                                                </Box>
+
+                                                {/* Description Section */}
+                                                <Box sx={{ mb: 3 }}>
+                                                    <Typography
+                                                        variant="body1"
+                                                        color="text.primary"
+                                                        sx={{
+                                                            minHeight: "96px",
+                                                            lineHeight: 1.5,
+                                                        }}
+                                                    >
+                                                        {project.description}
+                                                    </Typography>
+                                                </Box>
+
+                                                {/* Technologies Section */}
+                                                <Box sx={{ mb: "auto" }}>
+                                                    <Box
+                                                        sx={{
+                                                            display: "flex",
+                                                            flexWrap: "wrap",
+                                                            gap: 0.5,
+                                                            minHeight: "32px",
+                                                        }}
+                                                    >
+                                                        {project.technologies.map(
+                                                            (tech) => (
+                                                                <Chip
+                                                                    key={tech}
+                                                                    label={tech}
+                                                                    size="small"
+                                                                    sx={{
+                                                                        bgcolor:
+                                                                            "background.default",
+                                                                        color: "text.primary",
+                                                                        borderRadius:
+                                                                            "16px",
+                                                                        border: "1px solid",
+                                                                        borderColor:
+                                                                            "divider",
+                                                                        m: 0.5,
+                                                                    }}
+                                                                />
+                                                            )
+                                                        )}
+                                                    </Box>
+                                                </Box>
+
+                                                <Stack
+                                                    direction="row"
+                                                    spacing={2}
+                                                    sx={{ mt: 2 }}
+                                                >
+                                                    <Button
+                                                        variant="contained"
+                                                        color="primary"
+                                                        startIcon={
+                                                            <GitHubIcon />
+                                                        }
+                                                        href={
+                                                            project.githubLink
+                                                        }
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        fullWidth
+                                                        sx={{
+                                                            borderRadius: "8px",
+                                                            "&:hover": {
+                                                                backgroundColor:
+                                                                    "inherit",
+                                                                opacity: 0.9,
+                                                                color: "white",
+                                                            },
+                                                        }}
+                                                    >
+                                                        GitHub
+                                                    </Button>
+                                                </Stack>
+                                            </Paper>
+                                        </motion.div>
+                                    </Grid>
+                                ))}
+                        </AnimatePresence>
                     </Grid>
+
+                    {/* Show More/Less Button */}
+                    <Box
+                        sx={{
+                            display: "flex",
+                            justifyContent: "center",
+                            mt: 6,
+                        }}
+                    >
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.3 }}
+                        >
+                            <Button
+                                variant="outlined"
+                                color="primary"
+                                onClick={() => setIsExpanded(!isExpanded)}
+                                endIcon={
+                                    isExpanded ? (
+                                        <KeyboardArrowUpIcon />
+                                    ) : (
+                                        <KeyboardArrowDownIcon />
+                                    )
+                                }
+                                sx={{
+                                    borderRadius: "24px",
+                                    px: 4,
+                                    py: 1.5,
+                                    "&:hover": {
+                                        backgroundColor: "transparent",
+                                        borderColor: "primary.main",
+                                        opacity: 0.9,
+                                    },
+                                }}
+                            >
+                                {isExpanded ? "Show Less" : "Show More"}
+                            </Button>
+                        </motion.div>
+                    </Box>
                 </motion.div>
             </Container>
         </Box>
