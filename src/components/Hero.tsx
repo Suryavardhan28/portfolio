@@ -255,7 +255,7 @@ const Hero = () => {
                                     LinkedIn
                                 </Button>
                                 <Button
-                                    variant="outlined"
+                                    variant="contained"
                                     color="primary"
                                     size="large"
                                     startIcon={<Download />}
