@@ -92,13 +92,11 @@ const ProfessionalSummary = () => {
                                 mb: 3,
                             }}
                         >
-                            Full-Stack Software Engineer with over 3 years of
-                            experience in developing scalable enterprise
-                            applications. My expertise spans across JavaScript,
-                            React.js, Node.js, and cloud technologies (GCP,
-                            Azure), with a proven track record of delivering
-                            high-impact solutions and leading cross-functional
-                            teams in Agile environments.
+                            Full-Stack Software Engineer with 3+ years
+                            developing scalable enterprise applications and
+                            cloud technologies. Demonstrated expertise in
+                            delivering high-impact solutions and leading
+                            cross-functional teams in Agile environments.
                         </Typography>
 
                         <Typography

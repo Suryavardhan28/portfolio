@@ -1,5 +1,6 @@
 import {
     Download,
+    Email,
     GitHub,
     KeyboardArrowDown,
     LinkedIn,
@@ -168,11 +169,11 @@ const Hero = () => {
                                     mx: "auto",
                                 }}
                             >
-                                Building scalable enterprise applications with
-                                JavaScript, React.js, Node.js, and cloud
-                                technologies. Passionate about creating
-                                impactful solutions and leading cross-functional
-                                teams.
+                                Dedicated to building impactful digital
+                                experiences and driving innovation at scale. I
+                                thrive on solving complex challenges, empowering
+                                teams, and delivering solutions that make a
+                                difference.
                             </Typography>
                         </motion.div>
 
@@ -183,7 +184,7 @@ const Hero = () => {
                                 sx={{
                                     mt: 4,
                                     justifyContent: "center",
-                                    width: { xs: "100%", sm: "auto" },
+                                    width: "100%",
                                     px: { xs: 2, sm: 0 },
                                 }}
                             >
@@ -191,12 +192,15 @@ const Hero = () => {
                                     variant="contained"
                                     color="primary"
                                     size="large"
+                                    startIcon={<Email />}
                                     href="mailto:suryavardhan28@gmail.com"
                                     sx={{
                                         borderRadius: "24px",
                                         width: { xs: "100%", sm: "auto" },
+                                        flex: 1,
                                         px: { xs: 2, sm: 4 },
                                         py: 1.5,
+                                        minWidth: 0,
                                         "&:hover": {
                                             backgroundColor: "inherit",
                                             opacity: 0.9,
@@ -217,8 +221,10 @@ const Hero = () => {
                                     sx={{
                                         borderRadius: "24px",
                                         width: { xs: "100%", sm: "auto" },
+                                        flex: 1,
                                         px: { xs: 2, sm: 4 },
                                         py: 1.5,
+                                        minWidth: 0,
                                         "&:hover": {
                                             backgroundColor: "transparent",
                                             borderColor: "primary.main",
@@ -241,8 +247,10 @@ const Hero = () => {
                                     sx={{
                                         borderRadius: "24px",
                                         width: { xs: "100%", sm: "auto" },
+                                        flex: 1,
                                         px: { xs: 2, sm: 4 },
                                         py: 1.5,
+                                        minWidth: 0,
                                         "&:hover": {
                                             backgroundColor: "transparent",
                                             borderColor: "primary.main",
@@ -264,14 +272,14 @@ const Hero = () => {
                                     sx={{
                                         borderRadius: "24px",
                                         width: { xs: "100%", sm: "auto" },
+                                        flex: 1,
                                         px: { xs: 2, sm: 4 },
                                         py: 1.5,
+                                        minWidth: 0,
                                         "&:hover": {
-                                            backgroundColor: "transparent",
-                                            borderColor: "primary.main",
+                                            backgroundColor: "inherit",
                                             opacity: 0.9,
-                                            color:
-                                                mode === "dark" ? "white" : "",
+                                            color: "white",
                                         },
                                     }}
                                 >

@@ -1,5 +1,6 @@
 import MenuIcon from "@mui/icons-material/Menu";
 import {
+    Avatar,
     Box,
     Button,
     IconButton,
@@ -10,7 +11,7 @@ import {
     useScrollTrigger,
     useTheme,
 } from "@mui/material";
-import { motion, useAnimation } from "framer-motion";
+import { AnimatePresence, motion, useAnimation } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Link } from "react-scroll";
 
@@ -109,17 +110,54 @@ const Header = () => {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5 }}
                     >
-                        <Typography
-                            variant="h6"
-                            sx={{
-                                fontWeight: 700,
-                                color: "primary.main",
-                                fontSize: trigger ? "1.25rem" : "1.5rem",
-                                transition: "font-size 0.2s ease-in-out",
-                            }}
-                        >
-                            SURYA V
-                        </Typography>
+                        <AnimatePresence mode="wait">
+                            {!trigger ? (
+                                <motion.div
+                                    key="avatar"
+                                    initial={{ opacity: 0, y: -10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: 10 }}
+                                    transition={{ duration: 0.3 }}
+                                >
+                                    <Avatar
+                                        sx={{
+                                            bgcolor: theme.palette.primary.main,
+                                            color: theme.palette.getContrastText(
+                                                theme.palette.primary.main
+                                            ),
+                                            width: 40,
+                                            height: 40,
+                                            fontWeight: 700,
+                                            fontSize: "1.25rem",
+                                            boxShadow: 1,
+                                        }}
+                                    >
+                                        SV
+                                    </Avatar>
+                                </motion.div>
+                            ) : (
+                                <motion.div
+                                    key="typography"
+                                    initial={{ opacity: 0, y: -10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: 10 }}
+                                    transition={{ duration: 0.3 }}
+                                >
+                                    <Typography
+                                        variant="h6"
+                                        sx={{
+                                            fontWeight: 700,
+                                            color: "primary.main",
+                                            fontSize: "1.25rem",
+                                            transition:
+                                                "font-size 0.2s ease-in-out",
+                                        }}
+                                    >
+                                        SURYA V
+                                    </Typography>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
                     </motion.div>
 
                     {/* Mobile Menu */}
