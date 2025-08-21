@@ -212,12 +212,6 @@ const WorkExperience = () => {
                                                 boxShadow: theme.shadows[4],
                                             },
                                         }}
-                                        onClick={() => {
-                                            window.open(
-                                                experience.websiteLink,
-                                                "_blank"
-                                            );
-                                        }}
                                         style={{
                                             cursor: "pointer",
                                         }}
@@ -233,6 +227,12 @@ const WorkExperience = () => {
                                             variant="subtitle1"
                                             color="text.primary"
                                             sx={{ mb: 0.5 }}
+                                            onClick={() => {
+                                                window.open(
+                                                    experience.websiteLink,
+                                                    "_blank"
+                                                );
+                                            }}
                                         >
                                             {experience.company}
                                         </Typography>
