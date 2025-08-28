@@ -28,6 +28,7 @@ const skills: Skill[] = [
         items: [
             "Node.js",
             "Express.js",
+            "FastAPI",
             "REST APIs",
             "Microservices Architecture",
         ],
