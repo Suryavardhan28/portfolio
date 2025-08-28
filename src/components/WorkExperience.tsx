@@ -39,7 +39,7 @@ const experiences: Experience[] = [
         company: "Betsol",
         websiteLink: "https://betsol.com",
         location: "Bengaluru, Karnataka",
-        period: "January 2022 - March 2024",
+        period: "July 2022 - March 2024",
         achievements: [
             "Engineered and delivered comprehensive Windows backup and restore desktop application UI using React.js and Material-UI.",
             "Architected and deployed Key Wrapping security framework for JWT access token management.",
