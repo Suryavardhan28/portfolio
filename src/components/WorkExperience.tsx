@@ -54,6 +54,7 @@ const experiences: Experience[] = [
         period: "January 2022 - April 2022",
         achievements: [
             "Enhanced and optimized Django/React.js application by integrating SurveyMonkey APIs and implementing asynchronous survey creation following SDLC practices.",
+            "Improved User Experience by implementing responsive design and enhancing user interactions.",
         ],
     },
 ];

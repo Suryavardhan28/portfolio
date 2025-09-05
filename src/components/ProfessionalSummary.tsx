@@ -92,11 +92,11 @@ const ProfessionalSummary = () => {
                                 mb: 3,
                             }}
                         >
-                            Full-Stack Software Engineer with 3+ years
-                            developing scalable enterprise applications and
-                            cloud technologies. Demonstrated expertise in
-                            delivering high-impact solutions and leading
-                            cross-functional teams in Agile environments.
+                            Software Engineer/Developer with 3+ years developing
+                            scalable enterprise applications and cloud
+                            technologies. Demonstrated expertise in delivering
+                            high-impact solutions and leading cross-functional
+                            teams in Agile environments.
                         </Typography>
 
                         <Typography
