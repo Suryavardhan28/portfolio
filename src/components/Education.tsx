@@ -19,14 +19,14 @@ const educationData: Education[] = [
         degree: "Master of Technology - MTech, Computer Software Engineering",
         institution: "Birla Institute of Technology and Science, Pilani",
         location: "Pilani, Rajasthan",
-        period: "Jul 2024 - Jul 2026",
+        period: "Jul 2024 - May 2026",
         grade: "CGPA: 9.28/10",
     },
     {
         degree: "Bachelor of Engineering - BE, Computer Science Engineering",
         institution: "SJB Institute of Technology",
         location: "Bengaluru, Karnataka",
-        period: "Aug 2018 - Aug 2022",
+        period: "Aug 2018 - Jul 2022",
         grade: "CGPA: 9.1/10",
     },
     {
