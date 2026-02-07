@@ -32,14 +32,19 @@ const certifications: Certification[] = [
         link: "https://www.credly.com/badges/755ec034-5778-4464-9f2e-715724fb8f89/linked_in_profile",
     },
     {
-        title: "Advanced Java Programming",
-        issuer: "NIIT",
-        link: "https://drive.google.com/file/d/1VRu0SKt-Cr8g13OTrft5yKKoOK_CTu5f/view",
-    },
-    {
         title: "Modern JavaScript Development",
         issuer: "Udemy",
         link: "https://www.udemy.com/certificate/UC-ed92eb0e-3f44-45c3-b230-6786c7453dc3/",
+    },
+    {
+        title: "RxJS 7 and Observables: Introduction",
+        issuer: "Udemy",
+        link: "https://www.udemy.com/certificate/UC-863e2c70-f301-4bdf-a7cd-92382bbbb71e/",
+    },
+    {
+        title: "Advanced Java Programming",
+        issuer: "NIIT",
+        link: "https://drive.google.com/file/d/1VRu0SKt-Cr8g13OTrft5yKKoOK_CTu5f/view",
     },
     {
         title: "Modern HTML5 & CSS3",
