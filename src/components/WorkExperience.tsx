@@ -20,11 +20,22 @@ interface Experience {
 
 const experiences: Experience[] = [
     {
+        title: "Software Engineer II",
+        company: "Amagi",
+        websiteLink: "https://www.amagi.com/",
+        location: "Bengaluru, Karnataka",
+        period: "November 2025 - Present",
+        achievements: [
+            "Building the UI for Amagi CLOUDPORT, the flagship product.",
+            "Collaborating with UX and Backend teams to design and deliver new features."
+        ],
+    },
+    {
         title: "Software Engineer",
         company: "Betsol",
         websiteLink: "https://betsol.com",
         location: "Bengaluru, Karnataka",
-        period: "March 2024 - Present",
+        period: "March 2024 - November 2025",
         achievements: [
             "Led development of unified telecommunications platform centralizing management of 100,000+ Toll-Free Numbers and 500,000+ DIDs across multiple carriers.",
             "Built and integrated ServiceNow automation APIs eliminating manual provisioning processes and reducing order processing time from days to hours.",

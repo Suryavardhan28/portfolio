@@ -108,13 +108,15 @@ const ProfessionalSummary = () => {
                                 mb: 3,
                             }}
                         >
-                            At Betsol, I've led the development of a unified
-                            telecommunications platform managing over 100,000
-                            Toll-Free Numbers and 500,000 DIDs. I've also
-                            engineered automated customer provisioning workflows
-                            and implemented key security frameworks,
-                            significantly improving operational efficiency and
-                            application security.
+                            Currently at Amagi, I build the UI for CLOUDPORT—the
+                            flagship product—and collaborate with UX and Backend
+                            teams to design and deliver new features. Previously
+                            at Betsol, I led development of a unified
+                            telecommunications platform managing 100,000+
+                            Toll-Free Numbers and 500,000+ DIDs, engineered
+                            automated provisioning workflows, and implemented
+                            security frameworks that improved operational
+                            efficiency and application security.
                         </Typography>
 
                         <Typography
